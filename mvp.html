@@ -3,9 +3,23 @@
   <head>
   </head>
   <body>
-    <center><h1  id = "timer" >30:00</h1></center>
-  <center>  <button type="button" id="button" onclick="setTimeout(timeFunct(), 3000 );">I miss the old <em>START</em> button</button></center>
+    <center><h1  id = "timer" style = "
+      margin-bottom: 20px;
+      margin-top: 20px;"
 
+       >30:00</h1></center>
+  <!-- <center>  <button type="button" id="button" onclick="setTimeout(timeFunct(), 3000 );">I miss the old <em>START</em> button</button></center> -->
+<center>  <div class="dropdown">
+    <button class="dropbtn" id="button" onclick="setTimeout(timeFunct(), 3000 );" >I miss the old <em>START</em> button</button>
+    <div class="dropdown-content">
+      <a href="#">5 minutes</a>
+      <a href="#">10 minutes</a>
+      <a href="#">15 minutes</a>
+      <a href="#">20 minutes</a>
+      <a href="#">30 minutes</a>
+      <a href="#">40 minutes</a>
+    </div>
+  </div></center>
 
   <script src="mvp.js"></script>
   <link rel="stylesheet" href="mvp.css">
