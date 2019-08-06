@@ -6,7 +6,7 @@
 
 
 }
-.taskList{
+#taskList{
   list-style-type: circle;
     font-size: 80px;
 }
