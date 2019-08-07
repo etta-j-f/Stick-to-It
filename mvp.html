@@ -3,6 +3,7 @@
 
 <head>
   <link rel="stylesheet" href="mvp.css">
+  <script src="mvp.js"></script>
 </head>
 
 <body>
@@ -23,6 +24,44 @@
     </ul>
   </div>
 
+
+  <!-- HERE IS THE MODAL CODE STUFF -->
+  
+  <h2>TASK SUBMIT FORM</h2>
+
+  <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Add Task</button>
+
+  <div id="id01" class="modal">
+    <div class="modal-content animate" onsubmit="addtask()">
+      <div class="imgcontainer">
+        <span onclick="document.getElementById('id01').style.display='none'" class="close"
+          title="Close Modal">&times;</span>
+        <img src="http://www.brainlesstales.com/images/2010/Nov/stick-to-it.jpg" alt="Avatar" class="avatar">
+      </div>
+
+      <div id="test1" class="container">
+        <label for="taskName"><b>Task</b></label>
+        <input id="taskName" type="text" placeholder="Enter Task Name" name="taskName" required>
+
+        <label for="hour"><b>Hour</b></label>
+        <input id = "hour" type="number" min="0" placeholder=0 name="hour" required>
+
+        <label for="minute"><b>Minute</b></label>
+        <input id = "minute" type="number" min="0" placeholder=0 name="minute" required>
+
+        <label for="second"><b>Second</b></label>
+        <input id = "second" type="number" min="0" placeholder=0 name="second" required>
+<!-- 
+        <label for="dueDate"><b>Due Date</b></label>
+        <input id="datefield" type="date" min="2019-07-07" name="dueDate" required>
+
+        <label for="priority"><b>Priority Level (!, !!, or !!!)</b></label>
+        <input  id = "priority" type="text" min="0" placeholder="!" name="priority" required> -->
+        
+        <button onclick="addtask()">SUBMIT</button>
+      </div>
+    </div>
+  </div>
 
   <script src="mvp.js"></script>
 </body>
