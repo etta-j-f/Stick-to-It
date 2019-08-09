@@ -1,5 +1,5 @@
 var hour = 0, minute = 0, second = 0; //variable store the timer
-
+// hi
 var st = "stopped";
 
 //takes hour and returns a string, to be used in display
