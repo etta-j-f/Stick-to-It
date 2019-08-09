@@ -43,6 +43,8 @@ function genTimer() {
   timer.innerHTML = `<span>${str}</span>`
 }
 
+// code for timer
+
 function countDown() {
   if (second == 0) {
     if (minute == 0) {
@@ -68,8 +70,12 @@ function countDown() {
   genTimer();
 }
 
+// code for task list display
+
 var list = document.getElementById("taskList");
 var items = []
+
+// code to update task list with timer so they both work in sync
 
 function timeFunct() {
   if (st == "stopped") {
@@ -90,7 +96,7 @@ function timeFunct() {
     alert("Task in progress");
   }
 }
-
+// CODE FOR ALERT BASED TASK ENTERING
 
 // function addItem() {
 //   var taskName = prompt("please enter task name");
@@ -100,31 +106,31 @@ function timeFunct() {
 //   if (taskName != null) {
 //     if (isNaN(taskHour)){
 //       taskHour = 0
-//     } 
+//     }
 //     if (isNaN(taskMin)){
 //       taskMin = 0
-//     } 
+//     }
 //     if (isNaN(taskSecond)){
 //       taskSecond = 0
-//     } 
-
-    let x = document.createElement("li");
-    x.innerText = taskName;
-    items.push({ "name": taskName, "hour": taskHour, "min": taskMin, "second": taskSecond })
-    list.append(x);
-  }
-}
-
-// Get the modal
-var modal = document.getElementById('id01');
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function (event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-}
-//                 |  
+//     }
+//
+//     let x = document.createElement("li");
+//     x.innerText = taskName;
+//     items.push({ "name": taskName, "hour": taskHour, "min": taskMin, "second": taskSecond })
+//     list.append(x);
+//   }
+// }
+//
+// // Get the modal
+// var modal = document.getElementById('id01');
+//
+// // When the user clicks anywhere outside of the modal, close it
+// window.onclick = function (event) {
+//   if (event.target == modal) {
+//     modal.style.display = "none";
+//   }
+// }
+//                 |
 // FIX THIS LATER \|/
 //                 `
 // var today = new Date();
@@ -143,21 +149,25 @@ window.onclick = function (event) {
 // today = yyyy + "-" + mm + "-" + dd;
 // document.getElementById("datefield").setAttribute("min", today);
 
+
+
+// harvest data from pop up and adds it to list
+
 function addtask() {
   document.getElementById('id01').style.display='none';
   var taskName1 = document.getElementById("taskName").value;
   var hour1 = document.getElementById("hour").value;
   var minute1= document.getElementById("minute").value;
   var second1= document.getElementById("second").value;
-  console.log(taskName1);
-  console.log(hour1);
-  console.log(minute1);
-  console.log(second1);
+  console.log("task name is: " + taskName1);
+  console.log( "Hour value is: " +hour1);
+  console.log("Minute value is: " +minute1);
+  console.log("Seconds value is: " +second1);
   let x = document.createElement("li");
   x.innerText = taskName1;
   items.push({ "name": taskName1, "hour": hour1, "min": minute1, "second": second1 });
   list.append(x);
-  
+
 
   // console.log("hi")
   // console.log(taskName1);
