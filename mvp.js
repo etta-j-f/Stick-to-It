@@ -121,15 +121,15 @@ function timeFunct() {
 //   }
 // }
 //
-// // Get the modal
-// var modal = document.getElementById('id01');
-//
-// // When the user clicks anywhere outside of the modal, close it
-// window.onclick = function (event) {
-//   if (event.target == modal) {
-//     modal.style.display = "none";
-//   }
-// }
+// Get the modal
+var modal = document.getElementById('id01');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function (event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
 //                 |
 // FIX THIS LATER \|/
 //                 `
@@ -149,9 +149,7 @@ function timeFunct() {
 // today = yyyy + "-" + mm + "-" + dd;
 // document.getElementById("datefield").setAttribute("min", today);
 
-
-
-// harvest data from pop up and adds it to list
+// harvest datafroom pop up and adds it to list
 
 function addtask() {
   document.getElementById('id01').style.display='none';
@@ -159,17 +157,27 @@ function addtask() {
   var hour1 = document.getElementById("hour").value;
   var minute1= document.getElementById("minute").value;
   var second1= document.getElementById("second").value;
+  var priority1 = document.getElementById("priority").value;
+  var dueDate1 = document.getElementById("datefield").value;
   console.log("task name is: " + taskName1);
   console.log( "Hour value is: " +hour1);
   console.log("Minute value is: " +minute1);
   console.log("Seconds value is: " +second1);
+  console.log("priority level is: " +priority1);
+  console.log("date value is: " + dueDate1);
+
   let x = document.createElement("li");
   x.innerText = taskName1;
-  items.push({ "name": taskName1, "hour": hour1, "min": minute1, "second": second1 });
+  items.push({ "name": taskName1, "hour": hour1, "min": minute1, "second": second1, "priority": priority1, "due date": dueDate1});
+
   list.append(x);
-
-
-  // console.log("hi")
-  // console.log(taskName1);
-  // return taskName1;
 }
+
+
+// // sorting function
+// function sortByDate() {
+//   items.sort(function(a, b){
+//               return a."due date" - b."due date"
+//                 });
+//   // displayCars();
+// }

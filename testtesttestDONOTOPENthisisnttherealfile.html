@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html>
+<!-- hi -->
+<head>
+<style>#timer{
+  font-size: 250px;
+}
+/* hi */
+.time{
+  margin: 0%;
+}
+
+#button{
+  width: 300px;
+  height: 180px;
+  font-size: 40px;
+}
+
+
+
+/* below == the modal screen css stuff */
+
+
+
+
+body {font-family: Arial, Helvetica, sans-serif;}
+
+/* Full-width input fields */
+input[type=text], input[type=date] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+/* Set a style for all buttons */
+button {
+  background-color: rgba(15, 158, 241);
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+  width: auto;
+  padding: 10px 18px;
+  background-color: #f44336;
+}
+
+/* Center the image and position the close button */
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+  position: relative;
+}
+
+img.avatar {
+  width: 20%;
+  border-radius: 90%;
+}
+
+.container {
+  padding: 16px;
+}
+
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  padding-top: 60px;
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button (x) */
+.close {
+  position: absolute;
+  right: 25px;
+  top: 0;
+  color: #000;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: red;
+  cursor: pointer;
+}
+
+/* Add Zoom Animation */
+.animate {
+  -webkit-animation: animatezoom 0.6s;
+  animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+  from {-webkit-transform: scale(0)}
+  to {-webkit-transform: scale(1)}
+}
+
+@keyframes animatezoom {
+  from {transform: scale(0)}
+  to {transform: scale(1)}
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+  span.psw {
+     display: block;
+     float: none;
+  }
+  .cancelbtn {
+     width: 100%;
+  }
+}
+</style>
+<script>var hour = 0, minute = 0, second = 0; //variable store the timer
+// hi
+var st = "stopped";
+
+//takes hour and returns a string, to be used in display
+function convertHour() {
+  if (hour == 0) {
+    return "";
+  }
+  else {
+    return `${hour}:`;
+  }
+}
+
+//takes minute and converts to display string
+function convertMin() {
+  if (minute == 0) {
+    return "00:"; //display _:00:_ seconds
+  }
+  else if (minute >= 1 && minute <= 9) {
+    return `0${minute}:`; //[1, 9]
+  }
+  else {
+    return `${minute}:`; //[10, 59]
+  }
+}
+
+function convertSecond() {
+  if (second == 0) {
+    return "00 seconds"
+  }
+  else if (second >= 1 && second <= 9) {
+    return `0${second} seconds`;
+  }
+  else {
+    return `${second} seconds`;
+  }
+}
+
+function genTimer() {
+  var timer = document.getElementById("timer");
+  var str = `${convertHour()}${convertMin()}${convertSecond()}`
+  timer.innerHTML = `<span>${str}</span>`
+}
+
+// code for timer
+
+function countDown() {
+  if (second == 0) {
+    if (minute == 0) {
+      if (hour == 0) {
+        st = "stopped"; //update status because we've counted down
+        clearInterval(timer);
+        //TODO: go onto next task
+      }
+      else {
+        second = 59;
+        minute = 59;
+        hour -= 1;
+      }
+    }
+    else {
+      second = 59;
+      minute -= 1;
+    }
+  }
+  else {
+    second -= 1;
+  }
+  genTimer();
+}
+
+// code for task list display
+
+var list = document.getElementById("taskList");
+var items = []
+
+// code to update task list with timer so they both work in sync
+
+function timeFunct() {
+  if (st == "stopped") {
+    if (items.length > 0) {
+      var i = items.pop(0);
+      document.getElementById("currenttask").innerText = "WOwrking on " + i["name"];
+      hour = i["hour"];
+      minute = i["min"];
+      second = i["second"];
+      st = "running";
+      timer = setInterval(countDown, 1000);
+    }
+    else {
+      alert("No tasks right now!");
+    }
+  }
+  else {
+    alert("Task in progress");
+  }
+}
+// CODE FOR ALERT BASED TASK ENTERING
+
+// function addItem() {
+//   var taskName = prompt("please enter task name");
+//   var taskHour = parseInt(prompt("how many hours"));
+//   var taskMin = parseInt(prompt("how many minute"));
+//   var taskSecond = parseInt(prompt("how many seconds"));
+//   if (taskName != null) {
+//     if (isNaN(taskHour)){
+//       taskHour = 0
+//     }
+//     if (isNaN(taskMin)){
+//       taskMin = 0
+//     }
+//     if (isNaN(taskSecond)){
+//       taskSecond = 0
+//     }
+//
+//     let x = document.createElement("li");
+//     x.innerText = taskName;
+//     items.push({ "name": taskName, "hour": taskHour, "min": taskMin, "second": taskSecond })
+//     list.append(x);
+//   }
+// }
+//
+// // Get the modal
+// var modal = document.getElementById('id01');
+//
+// // When the user clicks anywhere outside of the modal, close it
+// window.onclick = function (event) {
+//   if (event.target == modal) {
+//     modal.style.display = "none";
+//   }
+// }
+//                 |
+// FIX THIS LATER \|/
+//                 `
+// var today = new Date();
+// var dd = today.getDate();
+// var mm = today.getDate() + 1;
+// var yyyy = today.getFullYear();
+// if (dd < 10) {
+//   dd = "0" + dd
+// }
+// if (mm < 10) {
+//   mm = "0" + mm
+// }
+// if (yyyy < 10) {
+//   yyyy = "0" + yyyy
+// }
+// today = yyyy + "-" + mm + "-" + dd;
+// document.getElementById("datefield").setAttribute("min", today);
+
+// harvest datafroom pop up and adds it to list
+
+function addtask() {
+  document.getElementById('id01').style.display='none';
+  var taskName1 = document.getElementById("taskName").value;
+  var hour1 = document.getElementById("hour").value;
+  var minute1= document.getElementById("minute").value;
+  var second1= document.getElementById("second").value;
+  var priority1 = document.getElementById("priority").value;
+  var dueDate1 = document.getElementById("datefield").value;
+  console.log("task name is: " + taskName1);
+  console.log( "Hour value is: " +hour1);
+  console.log("Minute value is: " +minute1);
+  console.log("Seconds value is: " +second1);
+  console.log("priority level is: " +priority1);
+  console.log("date value is: " + dueDate1);
+
+  let x = document.createElement("li");
+  x.innerText = taskName1;
+  items.push({ "name": taskName1, "hour": hour1, "min": minute1, "second": second1, "priority": priority1, "due date": dueDate1});
+
+  list.append(x);
+}
+
+
+// // sorting function
+// function sortByDate() {
+//   items.sort(function(a, b){
+//               return a."due date" - b."due date"
+//                 });
+//   // displayCars();
+// }
+</script>
+
+<body>
+  <div>
+    <div id="timer">
+      <span>00:00 seconds</span>
+    </div>
+    <span id="currenttask"></span>
+    <button class="dropbtn" id="button" onclick="timeFunct()">
+      I miss the old <em>START</em> button
+    </button>
+  </div>
+
+  <!-- <div id="addtasks"> -->
+    <!-- <button type="button" id="button" onclick="addItem()">Add task
+    </button> -->
+    <ul id="taskList">
+    </ul>
+  <!-- </div> -->
+
+
+  <!-- HERE IS THE MODAL CODE STUFF -->
+
+  <!-- <h2>TASK SUBMIT FORM</h2> -->
+
+  <button onclick="document.getElementById('id01').style.display='block'"  style="width:auto;">Add Task</button>
+
+  <div id="id01" class="modal">
+    <div class="modal-content animate" onsubmit="addtask()">
+      <div class="imgcontainer">
+        <span onclick="document.getElementById('id01').style.display='none'" class="close"
+          title="Close Modal">&times;</span>
+        <img src="http://www.brainlesstales.com/images/2010/Nov/stick-to-it.jpg" alt="Avatar" class="avatar">
+      </div>
+
+      <div id="test1" class="container">
+        <label for="taskName"><b>Task</b></label>
+        <input id="taskName" type="text" placeholder="Enter Task Name" name="taskName" required>
+
+        <label for="hour"><b>Hour</b></label>
+        <input id = "hour" type="number" min="0" placeholder=0 name="hour" required>
+
+        <label for="minute"><b>Minute</b></label>
+        <input id = "minute" type="number" min="0" placeholder=0 name="minute" required>
+
+        <label for="second"><b>Second</b></label>
+        <input id = "second" type="number" min="0" placeholder=0 name="second" required>
+
+        <label for="dueDate"><b>Due Date</b></label>
+        <input id="datefield" type="date" min="2019-07-07" name="dueDate" >
+
+        <!-- <label for="priority"><b>Priority Level (!, !!, or !!!)</b></label>
+        <input  id = "priority" type="text" placeholder="!" name="priority" required> -->
+        <label for="priority"><b> Priority Level</b></label>
+        <select id= "priority" name="priority">
+          <option value="low">!</option>
+          <option value="medium">!!</option>
+          <option value="high">!!!</option>
+        </select>
+
+        <button onclick="addtask()">SUBMIT</button>
+      </div>
+    </div>
+  </div>
+
+
+
+
+<!-- VERY BASIC MAYBE SETTINGS PAGE -->
+
+    <!-- <h2>TASK SUBMIT FORM</h2> -->
+
+    <button onclick="document.getElementById('id02').style.display='block'"  style="width:auto;">settings</button>
+<form>
+    <div id="id02" class="modal">
+      <div class="modal-content animate" onsubmit="addtask()">
+        <div class="imgcontainer">
+          <span onclick="document.getElementById('id02').style.display='none'" class="close"
+            title="Close Modal">&times;</span>
+          <img src="https://img.icons8.com/cotton/2x/settings.png" alt="settings-avatar" class="avatar">
+        </div>
+
+        <div class="container">
+          <label for="studyTime"><b>What time do you study/work best?</b></label>
+          <input id="studyTime" type="time" name="studyTime" required>
+          <label for="studyTime2"><b>to:</b></label>
+          <input id="studyTime2" type="time" name="studyTime2" required>
+<br>
+          <label for="procrastimeter"><b>How badly do you procrastinate?(from 0-10)</b></label>
+          <input type="range" name="procrastimeter" min="0" max="10">
+<br>
+
+          <label for="dailyBreaks"><b>What times do you take daily scheduled breaks?(EX: dinner)</b></label>
+          <input id="dailyBreaks" type="time" name="dailyBreaks" required>
+          <label for="dailyBreaks"><b>to:</b></label>
+          <input id="dailyBreaks" type="time" name="dailyBreaks" required>
+
+<br>
+          <label for="workTime"><b>how many minutes do you like to work straight before taking a break?</b></label>
+          <input id = "workTime" type="number" min="1" placeholder=1 name="workTime" required>
+<br>
+          <label for="breakTime"><b>how many minutes do you like to take a break inbetween working shifts?</b></label>
+          <input id="breakTime" type="number" min="1" name="breakTime" >
+<br>
+          <!-- <label for="priority"><b>Priority Level (!, !!, or !!!)</b></label>
+          <input  id = "priority" type="text" placeholder="!" name="priority" required> -->
+          <label for="Theme"><b>Theme</b></label>
+          <select id= "theme" name="Theme">
+            <option value="colorA">this color</option>
+            <option value="colorB">that color</option>
+            <option value="colorC">that other color</option>
+            <!-- maybe use  type="color"? -->
+          </select>
+<br>
+          <label for="color"><b>What is your favorite color?</b></label>
+          <input id="color" type="color" name="color" required>
+<br>
+          <label for="popQuiz"><b>QUICK! pop quiz; which option is correct?</b></label><br>
+          <input id="popQuiz" type="radio" name="popQuiz" value="thisOne" checked>this one<br>
+          <input id="popQuiz" type="radio" name="popQuiz" value="thisOne" >that one<br>
+          <input id="popQuiz" type="radio" name="popQuiz" value="thisOne" >this other one<br>
+<br>
+          <label for="boxes"><b>check all the boxes that you think have the greatest potential</b></label><br>
+          <input id="boxes" type="checkbox" name="boxes" value"me">ME!<br>
+          <input id="boxes" type="checkbox" name="boxes" value"no me">no, ME!<br>
+          <input id="boxes" type="checkbox" name="boxes" value"nono me">NO!    ME!<br>
+
+                  <input type="reset">
+</form>
+
+
+<!-- CHANGE THIS FUNCTION THAT IS LINKED TO THE BUTTON -->
+          <button onclick="addtask()">close</button>
+        </div>
+      </div>
+    </div>
+
+</body>
+
+</html>
