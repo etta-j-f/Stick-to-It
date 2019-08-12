@@ -24,21 +24,23 @@
 <br>
 <br>
 
-    <button class="dropbtn" id="button" onclick="timeFunct()">
+    <button class="dropbtn" id="startButton" onclick="timeFunct()">
 
-      I miss the old <em>START</em> button
+    Start
     </button>
     <span id="currenttask"></span>
   </div>
 
-  <div>
+  <div id="toDoqueue">
+    <p>To Do Queue:</p>
+    <!-- <br> -->
     <ul id="taskList">
-
+<li>test</li>
     </ul>
 
   </div>
 <!-- start!!!1 -->
-  <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Add Task</button>
+  <button id="addTaskButton" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Add Task</button>
 
   <div id="id01" class="modal">
     <div class="modal-content animate" onsubmit="addtask()">
@@ -73,13 +75,9 @@
       </div>
     </div>
   </div>
-<button onclick="pauseTimer()"> this stop function <del>doesnt</del> work</button>
+<button id="pauseButton" onclick="pauseTimer()"> Pause Timer</button>
 
-  <script src="mvp.js"></script>
-
-</body>
-
-<button onclick="contTimer()"> this start function doesnt work</button>
+<button id="restartButton" onclick="contTimer()"> Restart Timer</button>
 
 
 </div>
