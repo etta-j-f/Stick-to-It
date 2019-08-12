@@ -68,6 +68,13 @@ function countDown() {
   }
   genTimer();
 }
+// code to pause timer:
+
+function pauseTimer(){
+  clearInterval(timer);
+}
+
+
 
 // code for task list display
 
