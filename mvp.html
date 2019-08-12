@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html>
-<!-- hi -->
+
 <head>
   <link rel="stylesheet" href="mvp.css">
-  <script src="mvp.js"></script>
 </head>
 
 <body>
@@ -17,11 +16,14 @@
     </button>
   </div>
 
-  <!-- HERE IS THE MODAL CODE STUFF -->
+  <div>
+    <ul id="taskList">
 
-  <!-- <h2>TASK SUBMIT FORM</h2> -->
+    </ul>
 
-  <button onclick="document.getElementById('id01').style.display='block'"  style="width:auto;">Add Task</button>
+  </div>
+
+  <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Add Task</button>
 
   <div id="id01" class="modal">
     <div class="modal-content animate" onsubmit="addtask()">
@@ -30,44 +32,33 @@
           title="Close Modal">&times;</span>
         <img src="http://www.brainlesstales.com/images/2010/Nov/stick-to-it.jpg" alt="Avatar" class="avatar">
       </div>
-      <form>
 
       <div id="test1" class="container">
         <label for="taskName"><b>Task</b></label>
-        <input id="taskName" type="text" placeholder="Enter Task Name" name="taskName" required>
+        <input id="taskName" type="text" placeholder="Enter Task Name" name="taskName">
 
         <label for="hour"><b>Hour</b></label>
-        <input id = "hour" type="number" min="0" placeholder=0 name="hour" required>
+        <input id="hour" type="number" min="0" placeholder=0 name="hour">
 
         <label for="minute"><b>Minute</b></label>
-        <input id = "minute" type="number" min="0" placeholder=0 name="minute" required>
+        <input id="minute" type="number" min="0" placeholder=0 name="minute">
 
         <label for="second"><b>Second</b></label>
-        <input id = "second" type="number" min="0" placeholder=0 name="second" required>
-
+        <input id="second" type="number" min="0" placeholder=0 name="second">
         <label for="dueDate"><b>Due Date</b></label>
-        <input id="datefield" type="date" min="2019-07-07" name="dueDate" >
+        <input id="datefield" type="date" min="2019-07-07" name="dueDate">
 
-        <!-- <input type="reset"> --><!-- this doesnt rly work at all  -->
-
-
-        <!-- <label for="priority"><b>Priority Level (!, !!, or !!!)</b></label>
-        <input  id = "priority" type="text" placeholder="!" name="priority" required> -->
         <label for="priority"><b> Priority Level</b></label>
-        <select id= "priority" name="priority">
+        <select id="priority" name="priority">
           <option value="low">!</option>
           <option value="medium">!!</option>
           <option value="high">!!!</option>
         </select>
-
-        <input type="reset">
-      </form>
-
         <button onclick="addtask()">SUBMIT</button>
       </div>
     </div>
   </div>
-
+  <script src="mvp.js"></script>
 
 </body>
 

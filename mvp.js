@@ -1,5 +1,4 @@
 var hour = 0, minute = 0, second = 0; //variable store the timer
-// hi
 var st = "stopped";
 
 //takes hour and returns a string, to be used in display
@@ -96,80 +95,51 @@ function timeFunct() {
     alert("Task in progress");
   }
 }
-// CODE FOR ALERT BASED TASK ENTERING
 
-// function addItem() {
-//   var taskName = prompt("please enter task name");
-//   var taskHour = parseInt(prompt("how many hours"));
-//   var taskMin = parseInt(prompt("how many minute"));
-//   var taskSecond = parseInt(prompt("how many seconds"));
-//   if (taskName != null) {
-//     if (isNaN(taskHour)){
-//       taskHour = 0
-//     }
-//     if (isNaN(taskMin)){
-//       taskMin = 0
-//     }
-//     if (isNaN(taskSecond)){
-//       taskSecond = 0
-//     }
-//
-//     let x = document.createElement("li");
-//     x.innerText = taskName;
-//     items.push({ "name": taskName, "hour": taskHour, "min": taskMin, "second": taskSecond })
-//     list.append(x);
-//   }
-// }
-//
-// // Get the modal
-// var modal = document.getElementById('id01');
-//
-// // When the user clicks anywhere outside of the modal, close it
-// window.onclick = function (event) {
-//   if (event.target == modal) {
-//     modal.style.display = "none";
-//   }
-// }
-//                 |
-// FIX THIS LATER \|/
-//                 `
-// var today = new Date();
-// var dd = today.getDate();
-// var mm = today.getDate() + 1;
-// var yyyy = today.getFullYear();
-// if (dd < 10) {
-//   dd = "0" + dd
-// }
-// if (mm < 10) {
-//   mm = "0" + mm
-// }
-// if (yyyy < 10) {
-//   yyyy = "0" + yyyy
-// }
-// today = yyyy + "-" + mm + "-" + dd;
-// document.getElementById("datefield").setAttribute("min", today);
+function orderByDate(){
+  items.sort(function(a, b){
+    if (a["date"] > b["date"]){
+      return 1;
+    }
+    else{
+      return -1;
+    }
+  })
+  reloadDom();
+}
 
-
-
-// harvest data from pop up and adds it to list
+function reloadDom(){
+  var listItems = document.getElementsByTagName("li");
+  for(var i = 0; i < items.length; i++){
+    listItems[i].innerText = items[i]["name"]
+  }
+}
 
 function addtask() {
-  document.getElementById('id01').style.display='none';
-  var taskName1 = document.getElementById("taskName").value;
-  var hour1 = document.getElementById("hour").value;
-  var minute1= document.getElementById("minute").value;
-  var second1= document.getElementById("second").value;
-  console.log("task name is: " + taskName1);
-  console.log( "Hour value is: " +hour1);
-  console.log("Minute value is: " +minute1);
-  console.log("Seconds value is: " +second1);
+  let details = ["taskName", "hour", "minute", "second", "datefield", "priority"];
+  let values = []
+
+  for(var i = 0; i < details.length; i++){
+    let val = document.getElementById(details[i]).value;
+    if (val){
+      values.push(val);
+    }
+    else{
+      alert("Field is reqired!");
+      return;
+    }
+  }
+
+  if(values[1] == 0 && values[2] == 0 && values[3] == 0){
+    alert("Empty task?");
+    return;
+  }
+  
   let x = document.createElement("li");
-  x.innerText = taskName1;
-  items.push({ "name": taskName1, "hour": hour1, "min": minute1, "second": second1 });
+  x.innerText = values[0];
+  items.push({ "name": values[0], "hour": values[1], "min": values[2], "second": values[3], "date":values[4], "priority":values[5]});
   list.append(x);
+  document.getElementById('id01').style.display='none';
 
-
-  // console.log("hi")
-  // console.log(taskName1);
-  // return taskName1;
+  orderByDate();
 }
