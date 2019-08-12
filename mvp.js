@@ -80,7 +80,7 @@ function timeFunct() {
   if (st == "stopped") {
     if (items.length > 0) {
       var i = items.pop(0);
-      document.getElementById("currenttask").innerText = "WOwrking on " + i["name"];
+      document.getElementById("currenttask").innerText = "Working on " + i["name"];
       hour = i["hour"];
       minute = i["min"];
       second = i["second"];
@@ -134,7 +134,7 @@ function addtask() {
     alert("Empty task?");
     return;
   }
-  
+
   let x = document.createElement("li");
   x.innerText = values[0];
   items.push({ "name": values[0], "hour": values[1], "min": values[2], "second": values[3], "date":values[4], "priority":values[5]});
