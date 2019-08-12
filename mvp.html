@@ -6,14 +6,29 @@
 </head>
 
 <body>
+<div class="bg">
+
+
   <div>
     <div id="timer">
       <span>00:00 seconds</span>
     </div>
-    <span id="currenttask"></span>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
     <button class="dropbtn" id="button" onclick="timeFunct()">
+
       I miss the old <em>START</em> button
     </button>
+    <span id="currenttask"></span>
   </div>
 
   <div>
@@ -38,13 +53,13 @@
         <input id="taskName" type="text" placeholder="Enter Task Name" name="taskName">
 
         <label for="hour"><b>Hour</b></label>
-        <input id="hour" type="number" min="0" placeholder=0 name="hour">
+        <input id="hour" type="number" min="0" max="60" placeholder=0 name="hour">
 
         <label for="minute"><b>Minute</b></label>
-        <input id="minute" type="number" min="0" placeholder=0 name="minute">
+        <input id="minute" type="number" min="0" max="60" placeholder=0 name="minute">
 
         <label for="second"><b>Second</b></label>
-        <input id="second" type="number" min="0" placeholder=0 name="second">
+        <input id="second" type="number" min="0" max="60" placeholder=0 name="second">
         <label for="dueDate"><b>Due Date</b></label>
         <input id="datefield" type="date" min="2019-07-07" name="dueDate">
 
@@ -58,7 +73,19 @@
       </div>
     </div>
   </div>
-<button onclick="pauseTimer()"> this stop function doesnt work</button>
+<button onclick="pauseTimer()"> this stop function <del>doesnt</del> work</button>
+
+  <script src="mvp.js"></script>
+
+</body>
+
+<button onclick="contTimer()"> this start function doesnt work</button>
+
+
+</div>
+
+<p>This example creates a full page background image. Try to resize the browser window to see how it always will cover the full screen (when scrolled to top), and that it scales nicely on all screen sizes.</p>
+
 
   <script src="mvp.js"></script>
 

@@ -1,15 +1,52 @@
-#timer{
-  font-size: 250px;
+body, html {
+  height: 100%;
+  margin: 0;
 }
-/* hi */
+
+.bg {
+  /* The image used */
+  background-image: url("https://images.unsplash.com/photo-1513077202514-c511b41bd4c7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80");
+
+  /* Full height */
+  height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+
+
+#timer{
+  font-size: 100px;
+  position: absolute;
+   right: 0px;
+   width: 50%;
+
+}
+
+
+
+
 .time{
-  margin: 0%;
+  /* margin: 0%; */
+  /* font-size: 150px;
+  position: absolute;
+   right: 0px;
+   width: 70%; */
+
 }
 
 #button{
   width: 300px;
   height: 180px;
   font-size: 40px;
+  position: absolute;
+   right: 25%;
+   /* width: 70%; */
+
 }
 
 

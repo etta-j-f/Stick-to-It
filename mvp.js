@@ -74,6 +74,10 @@ function pauseTimer(){
   clearInterval(timer);
 }
 
+function contTimer(){
+  timer = setInterval(countDown, 1000);
+}
+
 
 
 // code for task list display
@@ -87,7 +91,7 @@ function timeFunct() {
   if (st == "stopped") {
     if (items.length > 0) {
       var i = items.pop(0);
-      document.getElementById("currenttask").innerText = "Working on " + i["name"];
+      document.getElementById("currenttask").innerText = "-- Working on " + i["name"];
       hour = i["hour"];
       minute = i["min"];
       second = i["second"];
