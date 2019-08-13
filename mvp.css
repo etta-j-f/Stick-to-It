@@ -81,7 +81,7 @@ body, html {
   left: 3%;
   bottom: 50%;
 }
-#restartButton{
+#resumeButton{
   background-color: rgba(0,0,0,0);
   color: #660066;
   width: 50px;
