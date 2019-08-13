@@ -91,6 +91,10 @@ body, html {
   left: 20%;
   bottom:45%;
 }
+#info{
+  position: absolute;
+  bottom: 5%
+}
 
 #title{
   font-size: 150%;
