@@ -96,6 +96,38 @@ body, html {
   font-size: 150%;
 }
 
+#shira{
+  position: absolute;
+  left: 40%;
+  bottom: -90%;
+  font-size: 150%;
+}
+#etta{
+  position: absolute;
+  left: 3%;
+  bottom: -90%;
+  font-size:  150%;
+
+}
+#shirapic{
+  width: 20%;
+  height: 20%;
+  border-radius: 100%;
+}
+#ettapic{
+  width: 12.5%;
+  height: 12.5%;
+  border-radius: 100%;
+}
+
+
+
+
+
+
+
+
+
 /* below == the modal screen css stuff */
 
 
