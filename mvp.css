@@ -40,7 +40,7 @@ body, html {
 }
 
 #startButton{
-  background-color: #8B008B;
+  background-color: #660066;
   width: 200px;
   height: 185px;
   font-size: 50px;
@@ -52,7 +52,7 @@ body, html {
 
 }
 #toDoqueue{
-    color: #8B008B;
+    color: #660066;
     position: absolute;
     right: 10%;
     bottom: 79%;
@@ -62,7 +62,7 @@ body, html {
 
 #addTaskButton{
   background-color: rgba(0,0,0,0);
-  color: #8B008B;
+  color: #660066;
   width: 50px;
   height: 18px;
   font-size: 50px;
@@ -72,7 +72,7 @@ body, html {
 }
 #pauseButton{
   background-color: rgba(0,0,0,0);
-  color: #8B008B;
+  color: #660066;
   width: 50px;
   height: 18px;
   font-size: 50px;
@@ -82,7 +82,7 @@ body, html {
 }
 #restartButton{
   background-color: rgba(0,0,0,0);
-  color: #8B008B;
+  color: #660066;
   width: 50px;
   height: 18px;
   font-size: 50px;
