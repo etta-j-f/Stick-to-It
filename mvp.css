@@ -115,7 +115,7 @@ input[type=text], input[type=date] {
 
 /* Set a style for all buttons */
 button {
-  background-color: rgba(15, 158, 241);
+  background-color:#660566;
   color: white;
   padding: 14px 20px;
   margin: 8px 0;
@@ -144,7 +144,7 @@ button:hover {
 
 img.avatar {
   width: 20%;
-  border-radius: 90%;
+  border-radius: 47%;
 }
 
 .container {
@@ -170,6 +170,9 @@ span.psw {
   background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
   padding-top: 60px;
 }
+/* #addpadding{
+  padding-top: 70px;
+} */
 
 /* Modal Content/Box */
 .modal-content {
