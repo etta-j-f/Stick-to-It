@@ -20,10 +20,10 @@ body, html {
 
 
 #timer{
-  font-size: 130px;
+  font-size: 890%;
   position: absolute;
    left: 45px;
-   top: 5%;
+   top: 0%;
    width: 55%;
 
 }
@@ -92,6 +92,9 @@ body, html {
   bottom:50%;
 }
 
+#title{
+  font-size: 150%;
+}
 
 /* below == the modal screen css stuff */
 
