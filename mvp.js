@@ -70,12 +70,21 @@ function countDown() {
 }
 // code to pause timer:
 
+
+// pause button
 function pauseTimer(){
   clearInterval(timer);
+  st = "stopped";
 }
-
+// restart button that doesnt compound timer when pressed twice
 function contTimer(){
-  timer = setInterval(countDown, 1000);
+  if (st == "stopped") {
+    timer = setInterval(countDown, 1000);
+    st = "running"
+  }
+  else {
+    alert("Task in progress");
+  }
 }
 
 
@@ -85,7 +94,7 @@ function contTimer(){
 var list = document.getElementById("taskList");
 var items = []
 
-// code to update task list with timer so they both work in sync
+// code to update task list with timer so they both work in sync and timer doesnt go faster if press start twice
 
 function timeFunct() {
   if (st == "stopped") {
@@ -106,6 +115,8 @@ function timeFunct() {
     alert("Task in progress");
   }
 }
+
+
 
 function orderByDate(){
   items.sort(function(a, b){
