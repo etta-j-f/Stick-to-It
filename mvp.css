@@ -23,6 +23,7 @@ body, html {
   font-size: 130px;
   position: absolute;
    left: 45px;
+   top: 5%;
    width: 55%;
 
 }
@@ -55,7 +56,7 @@ body, html {
     color: #660066;
     position: absolute;
     right: 10%;
-    bottom: 79%;
+    top: 6%;
     font-size: 25px;
 }
 
