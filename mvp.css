@@ -6,7 +6,7 @@ body, html {
 .bg {
   /* The image used */
   background-image: url("https://prod-corporate-fe-assets.s3.amazonaws.com/uploads/2018/02/feature-image-designs-how-to-create-a-brand-style-guide-2.png");
-  opacity: 0.65;
+  opacity: 0.55;
   /* Full height */
   height: 69.6%;
 
@@ -67,28 +67,28 @@ body, html {
   height: 18px;
   font-size: 50px;
   position: absolute;
-  right: 45%;
+  right: 44%;
   bottom:50%;
 }
 #pauseButton{
   background-color: rgba(0,0,0,0);
   color: #8B008B;
   width: 50px;
-  height: 80px;
+  height: 18px;
   font-size: 50px;
   position: absolute;
-  right: 40%;
-  bottom: 5%;
+  left: 3%;
+  bottom: 50%;
 }
 #restartButton{
   background-color: rgba(0,0,0,0);
   color: #8B008B;
   width: 50px;
-  height: 80px;
+  height: 18px;
   font-size: 50px;
   position: absolute;
-  right: 30%;
-  bottom:5%;
+  left: 20%;
+  bottom:50%;
 }
 
 
