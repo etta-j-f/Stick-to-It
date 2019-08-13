@@ -22,7 +22,7 @@ body, html {
 #timer{
   font-size: 890%;
   position: absolute;
-   left: 45px;
+   left: 3%;
    top: 0%;
    width: 50%;
 
@@ -42,11 +42,11 @@ body, html {
 
 #startButton{
   background-color: #660066;
-  width: 200px;
-  height: 185px;
-  font-size: 50px;
+  width: 12%;
+  height: 20%;
+  font-size: 200%;
   position: absolute;
-   right: 45%;
+   right: 44%;
    border-radius: 50%;
    bottom: 55%;
    /* width: 70%; */
@@ -57,39 +57,39 @@ body, html {
     position: absolute;
     right: 10%;
     top: 6%;
-    font-size: 25px;
+    font-size: 150%;
 }
 
 
 #addTaskButton{
   background-color: rgba(0,0,0,0);
   color: #660066;
-  width: 50px;
-  height: 18px;
-  font-size: 50px;
+  width: 10%;
+  height: 10%;
+  font-size: 300%;
   position: absolute;
-  right: 44%;
-  bottom:50%;
+  right: 42%;
+  bottom: 45%;
 }
 #pauseButton{
   background-color: rgba(0,0,0,0);
   color: #660066;
-  width: 50px;
-  height: 18px;
-  font-size: 50px;
+  width: 10%;
+  height: 10%;
+  font-size: 300%;
   position: absolute;
   left: 3%;
-  bottom: 50%;
+  bottom: 45%;
 }
 #resumeButton{
   background-color: rgba(0,0,0,0);
   color: #660066;
-  width: 50px;
-  height: 18px;
-  font-size: 50px;
+  width: 10%;
+  height: 10%;
+  font-size: 300%;
   position: absolute;
   left: 20%;
-  bottom:50%;
+  bottom:45%;
 }
 
 #title{
