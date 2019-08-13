@@ -5,10 +5,10 @@ body, html {
 
 .bg {
   /* The image used */
-  background-image: url("https://images.unsplash.com/photo-1513077202514-c511b41bd4c7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80");
-
+  background-image: url("https://prod-corporate-fe-assets.s3.amazonaws.com/uploads/2018/02/feature-image-designs-how-to-create-a-brand-style-guide-2.png");
+  opacity: 0.65;
   /* Full height */
-  height: 100%;
+  height: 69.6%;
 
   /* Center and scale the image nicely */
   background-position: center;
@@ -43,7 +43,7 @@ body, html {
   background-color: #8B008B;
   width: 200px;
   height: 185px;
-  font-size: 40px;
+  font-size: 50px;
   position: absolute;
    right: 25%;
    border-radius: 50%;
@@ -56,6 +56,7 @@ body, html {
     position: absolute;
     right: 31%;
     bottom: 43%;
+    font-size: 25px;
 }
 
 
@@ -64,7 +65,7 @@ body, html {
   color: #8B008B;
   width: 50px;
   height: 18px;
-  font-size: 40px;
+  font-size: 50px;
   position: absolute;
   right: 27%;
   bottom:22%;
@@ -74,7 +75,7 @@ body, html {
   color: #8B008B;
   width: 50px;
   height: 80px;
-  font-size: 40px;
+  font-size: 50px;
   position: absolute;
   right: 40%;
   bottom: 5%;
@@ -84,7 +85,7 @@ body, html {
   color: #8B008B;
   width: 50px;
   height: 80px;
-  font-size: 40px;
+  font-size: 50px;
   position: absolute;
   right: 30%;
   bottom:5%;
