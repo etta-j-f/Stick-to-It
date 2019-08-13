@@ -22,7 +22,7 @@ body, html {
 #timer{
   font-size: 130px;
   position: absolute;
-   right: 0px;
+   left: 45px;
    width: 55%;
 
 }
@@ -45,17 +45,17 @@ body, html {
   height: 185px;
   font-size: 50px;
   position: absolute;
-   right: 25%;
+   right: 45%;
    border-radius: 50%;
-   bottom: 58%;
+   bottom: 55%;
    /* width: 70%; */
 
 }
 #toDoqueue{
     color: #8B008B;
     position: absolute;
-    right: 31%;
-    bottom: 43%;
+    right: 10%;
+    bottom: 79%;
     font-size: 25px;
 }
 
@@ -67,8 +67,8 @@ body, html {
   height: 18px;
   font-size: 50px;
   position: absolute;
-  right: 27%;
-  bottom:22%;
+  right: 45%;
+  bottom:50%;
 }
 #pauseButton{
   background-color: rgba(0,0,0,0);
