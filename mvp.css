@@ -108,6 +108,12 @@ bottom: 1%
   font-size: ;
 }
 
+#creators{
+  position: absolute;
+  left: 0%;
+  top: 120%;
+
+}
 #shira{
   position: absolute;
   left: 40%;
@@ -127,8 +133,8 @@ bottom: 1%
   border-radius: 100%;
 }
 #ettapic{
-  width: 12.5%;
-  height: 12.5%;
+  width: 20%;
+  height: 20%;
   border-radius: 100%;
   /* DO YOU GET THIS */
 }
