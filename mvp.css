@@ -91,14 +91,16 @@ body, html {
   left: 20%;
   bottom:45%;
 }
-#info{
-  position: absolute;
-  bottom: .5%;
-  font-size: 180%
-}
 
 #title{
   font-size: 150%;
+}
+
+#currenttask{
+  position: absolute;
+  left:34%  ;
+  top:10%;
+  font-size: ;
 }
 
 #shira{
