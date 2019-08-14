@@ -100,9 +100,8 @@ function timeFunct() {
   if (st == "stopped") {
     if (items.length > 0) {
       var i = items.pop(0);
-      document.getElementById("currenttask").innerText = "Working on " + i["name"]
-      // +i["priority"]+i["name"];
-      // the print priority part isnt working!!!!!!!!!!!!!!!!
+      document.getElementById("currenttask").innerText = "-- Working on " + i["name"];
+      // the print priority part isnt working
       hour = i["hour"];
       minute = i["min"];
       second = i["second"];
@@ -135,7 +134,7 @@ function orderByDate(){
 function reloadDom(){
   var listItems = document.getElementsByTagName("li");
   for(var i = 0; i < items.length; i++){
-    listItems[i].innerText = items[i]["name"]
+    listItems[i].innerText = items[i]["name"]+" " +items[i]["priority"]
   }
 }
 

@@ -95,7 +95,12 @@ body, html {
 #title{
   font-size: 150%;
 }
+#info{
+font-size: 30px;
+position: absolute;
+bottom: 1%
 
+}
 #currenttask{
   position: absolute;
   left:34%  ;
